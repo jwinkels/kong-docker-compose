@@ -1,0 +1,18 @@
+_format_version: "3.0"
+services:
+  - name: emp
+    host: localhost
+    path: /
+    port: 8080
+    protocol: http
+    read_timeout: 15000
+    retries: 2
+    routes:
+      - name: emp
+        hosts:
+          - "127.0.0.1"
+        https_redirect_status_code: 426
+        paths:
+          - "/employees"
+        protocols:
+          - http
